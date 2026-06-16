@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimalist CSS Layout Showcase</title>
+  <meta name="description" content="A simple, clean webpage layout demonstrating core CSS techniques: Flexbox, Grid, Floats, positioning, and inline-block.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="index.css?v=5">
+</head>
+<body>
+
+  <!-- Header: Flexbox Layout -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo">
+        <span class="logo-text">CSS.<span>Layouts</span></span>
+      </div>
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#grid">CSS Grid</a>
+        <a href="#flexbox">Flexbox</a>
+        <a href="#floats">Floats</a>
+        <a href="#positioning">Positioning</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section 1: Hero (CSS Grid Layout) -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="section-label">01 // Hero Grid Layout</span>
+          <h1 class="hero-title">A clean showcase of webpage structure.</h1>
+          <p class="hero-desc">
+            This simple page demonstrates five core CSS layout techniques. Built with a clean, print-inspired aesthetic, using slate-monochrome values.
+          </p>
+          <div class="hero-actions">
+            <a href="#grid" class="btn btn-dark">View Grid Section</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Layout" target="_blank" class="btn btn-outline">Read MDN Docs</a>
+          </div>
+        </div>
+        
+        <div class="hero-graphic">
+          <div class="layout-showcase-container">
+            <!-- Overlay Card 1: CSS Grid Mockup -->
+            <div class="showcase-card grid-card-mock">
+              <div class="mock-header">
+                <span class="mock-dot"></span>
+                <span class="mock-dot"></span>
+                <span class="mock-dot"></span>
+              </div>
+              <div class="mock-grid">
+                <div class="mock-grid-item mock-blue"></div>
+                <div class="mock-grid-item mock-green"></div>
+                <div class="mock-grid-item mock-rose"></div>
+                <div class="mock-grid-item mock-span-3 mock-purple"></div>
+              </div>
+            </div>
+            
+            <!-- Overlay Card 2: Flexbox Row Mockup -->
+            <div class="showcase-card flex-card-mock">
+              <div class="mock-flex-row">
+                <div class="mock-bar"></div>
+                <div class="mock-pills">
+                  <div class="mock-pill mock-blue"></div>
+                  <div class="mock-pill mock-green"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Overlay Card 3: Position Overlay Badge Mockup -->
+            <div class="showcase-card absolute-card-mock">
+              <span class="mock-label">position: relative</span>
+              <span class="mock-badge-absolute">absolute</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: CSS Grid Gallery (Responsive Auto-Fit / Minmax) -->
+    <section id="grid" class="section-padding border-top">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">02 // CSS Grid Gallery</span>
+          <h2 class="section-title">Responsive Cards</h2>
+          <p class="section-desc">
+            This card deck uses <code>grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))</code> to adapt cleanly to any viewport width without media queries.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="card">
+            <div class="card-image-placeholder">Card Media 1</div>
+            <div class="card-content">
+              <h3>Fluid Auto-Fit Card</h3>
+              <p>Automatically expands to consume remaining container space, wrapping cleanly to the next row when screen space shrinks.</p>
+              <div class="card-tags">
+                <span class="tag">#css-grid</span>
+                <span class="tag">#auto-fit</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image-placeholder">Card Media 2</div>
+            <div class="card-content">
+              <h3>Minmax Boundaries</h3>
+              <p>Ensures cards never shrink below 280px, maintaining layout integrity and reading comfort on mobile viewports.</p>
+              <div class="card-tags">
+                <span class="tag">#minmax</span>
+                <span class="tag">#responsive</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image-placeholder">Card Media 3</div>
+            <div class="card-content">
+              <h3>Purely CSS-Driven</h3>
+              <p>Responsive columns handled directly by the browser's layout engine rather than script calculations or breakpoint media blocks.</p>
+              <div class="card-tags">
+                <span class="tag">#fluid-columns</span>
+                <span class="tag">#vanilla-css</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Flexbox Showcase (Flexible Alignments) -->
+    <section id="flexbox" class="section-padding border-top">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">03 // CSS Flexbox Showcase</span>
+          <h2 class="section-title">Horizontal & Vertical Alignments</h2>
+          <p class="section-desc">
+            Flexbox excels at distributing space along a single axis. Below are three items distributed using <code>justify-content: space-between</code>.
+          </p>
+        </div>
+
+        <div class="flex-container">
+          <div class="flex-item flex-grow-1">
+            <span class="flex-num">1</span>
+            <div class="flex-info">
+              <h3>Flexible Item (Grow)</h3>
+              <p>Uses <code>flex: 1 1 0%</code> to expand and consume space.</p>
+            </div>
+          </div>
+          
+          <div class="flex-item flex-fixed">
+            <span class="flex-num">2</span>
+            <div class="flex-info">
+              <h3>Fixed Width Item</h3>
+              <p>Uses <code>flex: 0 0 200px</code> to maintain a static size.</p>
+            </div>
+          </div>
+
+          <div class="flex-item flex-grow-2">
+            <span class="flex-num">3</span>
+            <div class="flex-info">
+              <h3>Flexible Item (Double Grow)</h3>
+              <p>Uses <code>flex: 2 1 0%</code> to grow twice as fast.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Floats & Clearfix (Text Wrapping) -->
+    <section id="floats" class="section-padding border-top">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">04 // CSS Floats & Clearfix</span>
+          <h2 class="section-title">Flow Text Wrapping</h2>
+          <p class="section-desc">
+            Floats are ideal for wrapping document content naturally around inline containers like sidebars or images.
+          </p>
+        </div>
+
+        <div class="article-wrapper clearfix">
+          <div class="floated-sidebar">
+            <h3>Floated Aside</h3>
+            <p>This box is floated left with a right margin. Notice how the paragraph content wraps smoothly around its borders.</p>
+            <span class="float-code-badge">float: left;</span>
+          </div>
+          
+          <div class="article-body">
+            <p class="lead-text">
+              Floats remove an element from normal flow, placing it along the left or right edge of its parent container. The inline elements in the document continue to flow around it.
+            </p>
+            <p>
+              When elements are floated, parent containers collapse if they contain only floated children, because floated nodes do not occupy heights in the normal page flow. This requires a <strong>clearfix</strong>. In this example, the wrapper container uses the classic <code>::after</code> pseudo-element rule to clear float nodes without modifying HTML structures.
+            </p>
+            <p>
+              While CSS Grid and Flexbox are preferred for overall page structure, floats remain the primary tool for wrapping editorial text smoothly around side graphics and photos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Positioning Showcase (Absolute, Relative, Sticky, Fixed) -->
+    <section id="positioning" class="section-padding border-top">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">05 // CSS Positioning & Inline-Block</span>
+          <h2 class="section-title">Coordinate Spaces & Flow</h2>
+          <p class="section-desc">
+            An element with <code>position: relative</code> acts as the coordinate center for children with <code>position: absolute</code>.
+          </p>
+        </div>
+
+        <div class="position-demo-box">
+          <span class="box-label">Relative Container</span>
+          
+          <div class="position-info-content">
+            <h3>Relative Context</h3>
+            <p>The parent border acts as the coordinate boundary for the absolute badges positioned in the corners.</p>
+            
+            <div class="tag-cloud">
+              <span class="box-label tag-cloud-label">Inline-Block flow</span>
+              <!-- Inline-Block tags -->
+              <span class="inline-tag">display: inline-block</span>
+              <span class="inline-tag">flows like text</span>
+              <span class="inline-tag">respects width/height</span>
+              <span class="inline-tag">padding: 6px 12px</span>
+            </div>
+          </div>
+
+          <!-- Absolute elements -->
+          <div class="absolute-badge position-top-right">
+            <span>position: absolute; top: 16px; right: 16px;</span>
+          </div>
+
+          <div class="absolute-badge position-bottom-left">
+            <span>position: absolute; bottom: 16px; left: 16px;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <h4>CSS.Layouts</h4>
+        <p>A basic structural showcase demonstrating layout systems.</p>
+      </div>
+      <div class="footer-links">
+        <!-- Inline-block links list -->
+        <ul class="inline-links-list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#grid">Grid</a></li>
+          <li><a href="#flexbox">Flexbox</a></li>
+          <li><a href="#floats">Floats</a></li>
+          <li><a href="#positioning">Positioning</a></li>
+        </ul>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2026 Layout Showcase. Built with HTML & CSS.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
